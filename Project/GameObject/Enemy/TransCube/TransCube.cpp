@@ -22,7 +22,7 @@ void TransCube::Initialize()
 
 void TransCube::Update()
 {
-
+	ReticlePosFanc();
 
 	worldTransform.rotation_.y += 0.01f;
 	worldTransform.UpdateMatrix();
@@ -32,7 +32,7 @@ void TransCube::Update()
 void TransCube::Draw(ViewProjection view)
 {
 	state_->Draw(this, view);
-	model_.get()->Draw(worldTransform, view);
+	//model_.get()->Draw(worldTransform, view);
 
 }
 

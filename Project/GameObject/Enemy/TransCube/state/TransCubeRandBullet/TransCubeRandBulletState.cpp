@@ -47,7 +47,7 @@ void TransCubeRandBulletState::SetParent(const WorldTransform* parent)
 
 void TransCubeRandBulletState::Fire(Vector3 velocity)
 {
-	if (CoolTime >= 30)
+	if (CoolTime >= 300)
 	{
 
 		TransCubeBullet* Fbullet = new TransCubeBullet();

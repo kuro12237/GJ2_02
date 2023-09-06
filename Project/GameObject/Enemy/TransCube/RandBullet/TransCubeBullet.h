@@ -13,7 +13,7 @@ public:
 	~TransCubeBullet();
 
 
-	void Initialize(Vector3 velocity);
+	void Initialize(Vector3 &velocity);
 
 	void Update();
 
