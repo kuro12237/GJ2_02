@@ -117,7 +117,6 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="Engine\Math\MathFunction.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeBullet.cpp" />
-    <ClCompile Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeRandBullet.cpp" />
     <ClCompile Include="Project\GameObject\Enemy\TransCube\state\ITransCubeState.cpp" />
     <ClCompile Include="Project\GameObject\Enemy\TransCube\state\TransCubeRandBullet\TransCubeRandBulletState.cpp" />
     <ClCompile Include="Project\GameObject\Enemy\TransCube\TransCube.cpp" />
