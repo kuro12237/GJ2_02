@@ -3,6 +3,8 @@
 
 #include"Model/Model.h"
 
+using std::unique_ptr;
+
 
 class TransCubeBullet
 {
@@ -18,8 +20,12 @@ public:
 	void Draw(ViewProjection view);
 private:
 
+	unique_ptr<Model> model_ = nullptr;
+	WorldTransform worldTransform_ = {};
 
+	Vector3 velocity_ = {};
 
 };
+
 
 
