@@ -1,7 +1,6 @@
 #pragma once
 #include"Model/Model.h"
 #include"state/ITransCubeState.h"
-#include"state/TransCubeLaser/TransCubeLaserState.h"
 
 class TransCube
 {
@@ -15,14 +14,15 @@ public:
 
 	void Draw(ViewProjection view);
 
-	void ChangeState(ITransCubeState *state);
+	void ChangeLaserState();
 
 private:
 
 	std::unique_ptr<Model> model_;
 	WorldTransform worldTransform = {};
 
-	ITransCubeState* state_ = nullptr;
+	//ITransCubeState* state_ = nullptr;
 	
+	std::unique_ptr<ITransCubeState>state_ = nullptr;
 };
 

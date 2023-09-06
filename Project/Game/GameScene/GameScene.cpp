@@ -43,11 +43,12 @@ void GameScene::Initialize(GameManager* gameManager) {
 	followCamera_->SetTarget(&player_->GetWorldTransform());
 	player_->SetViewProjection(&followCamera_->GetViewProjection());
 
-	//Skydome
-	modelSkydome_ = std::make_unique<Model>();
-	modelSkydome_->CreateFromOBJ("Project/Resources/Skydome", "Skydome.obj");
-	modelSkydome_->GetMaterial()->enableLighting_ = false;
-	modelSkydome_->GetMaterial()->Update();
+	transCube_ = std::make_unique<TransCube>();
+	transCube_.get()->Initialize();
+
+    ground_= std::make_unique<TestGround>();
+	ground_.get()->Initialize();
+
 };
 
 void GameScene::Update(GameManager* gameManager) {
@@ -55,8 +56,8 @@ void GameScene::Update(GameManager* gameManager) {
 	player_->Update();
 	//追従カメラの更新
 	followCamera_->Update();
-	//Skydome
-	worldTransform_.UpdateMatrix();
+
+	transCube_.get()->Update();
 
 	//デバッグカメラの更新
 	debugCamera_->Update();
@@ -98,10 +99,11 @@ void GameScene::Update(GameManager* gameManager) {
 };
 
 void GameScene::Draw(GameManager* gameManager) {
+	ground_.get()->Draw(viewProjection_);
 	//自キャラの描画
 	player_->Draw(viewProjection_);
-	//Skydome
-	modelSkydome_->Draw(worldTransform_, viewProjection_);
+	transCube_.get()->Draw(viewProjection_);
+
 
 #pragma region ポストプロセス
 	//ポストプロセスの描画前処理

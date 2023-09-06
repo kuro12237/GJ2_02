@@ -67,6 +67,18 @@
     <Filter Include="Shader">
       <UniqueIdentifier>{3ba02e86-d136-4605-bc0a-5ec7812bc9c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Project\GameObject">
+      <UniqueIdentifier>{4068a7e6-5258-4f3b-b087-4c39e3f8135c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Project\GameObject\TransCube">
+      <UniqueIdentifier>{d6ec55af-4722-4945-9718-45747e58da7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Project\GameObject\TransCube\state_">
+      <UniqueIdentifier>{cb94d91f-791e-43aa-bfb5-7c08099f6a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Project\GameObject\TextGround">
+      <UniqueIdentifier>{bc17cddd-9cb5-462d-83cc-6991beed6cd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -158,6 +170,24 @@
     </ClCompile>
     <ClCompile Include="Project\Game\FollowCamera\FollowCamera.cpp">
       <Filter>ソース ファイル\Project\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Enemy\TransCube\TransCube.cpp">
+      <Filter>ソース ファイル\Project\GameObject\TransCube</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Enemy\TransCube\state\ITransCubeState.cpp">
+      <Filter>ソース ファイル\Project\GameObject\TransCube\state_</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Ground\TestGround.cpp">
+      <Filter>ソース ファイル\Project\GameObject\TextGround</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Enemy\TransCube\state\TransCubeRandBullet\TransCubeRandBulletState.cpp">
+      <Filter>ソース ファイル\Project\GameObject\TransCube\state_</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeRandBullet.cpp">
+      <Filter>ソース ファイル\Project\GameObject\TransCube</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeBullet.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -256,6 +286,21 @@
     </ClInclude>
     <ClInclude Include="Project\Game\FollowCamera\FollowCamera.h">
       <Filter>ヘッダー ファイル\Project\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Enemy\TransCube\TransCube.h">
+      <Filter>ソース ファイル\Project\GameObject\TransCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Enemy\TransCube\state\ITransCubeState.h">
+      <Filter>ソース ファイル\Project\GameObject\TransCube\state_</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Ground\TestGround.h">
+      <Filter>ソース ファイル\Project\GameObject\TextGround</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Enemy\TransCube\state\TransCubeRandBullet\TransCubeRandBulletState.h">
+      <Filter>ソース ファイル\Project\GameObject\TransCube\state_</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeBullet.h">
+      <Filter>ソース ファイル\Project\GameObject\TransCube</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

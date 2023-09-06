@@ -13,6 +13,8 @@
 #include "CollisionManager/CollisionManager.h"
 #include "Player/Player.h"
 #include "FollowCamera/FollowCamera.h"
+#include"../GameObject/Enemy/TransCube/TransCube.h"
+#include"../GameObject/Ground/TestGround.h"
 
 class GameScene : public IScene {
 public:
@@ -69,8 +71,13 @@ private:
 
 	//追従カメラ
 	std::unique_ptr<FollowCamera> followCamera_ = nullptr;
+	
+	//TransCube
+	std::unique_ptr<TransCube> transCube_ = nullptr;
 
-	//Skydome
-	std::unique_ptr<Model> modelSkydome_ = nullptr;
+	//testGround
+	std::unique_ptr<TestGround> ground_ = nullptr;
+
+
 	WorldTransform worldTransform_{};
 };
