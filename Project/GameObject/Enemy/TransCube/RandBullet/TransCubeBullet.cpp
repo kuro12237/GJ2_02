@@ -1,5 +1,13 @@
 #include "TransCubeBullet.h"
 
+TransCubeBullet::TransCubeBullet()
+{
+}
+
+TransCubeBullet::~TransCubeBullet()
+{
+}
+
 void TransCubeBullet::Initialize(Vector3 velocity)
 {
 
