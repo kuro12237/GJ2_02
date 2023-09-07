@@ -23,6 +23,21 @@ void TransCubeRandBulletState::Initialize(TransCube* state)
 
 void TransCubeRandBulletState::Update(TransCube* state)
 {
+
+
+	for (TransCubeBullet* bullet : bullets_) {
+
+		if (bullet->GetPosition().x >= 80 || bullet->GetPosition().x <= -80)
+		{
+			bullet->SetIsDead(true);
+
+		}
+		if (bullet->GetPosition().z >= 80 || bullet->GetPosition().z <= -80)
+		{
+			bullet->SetIsDead(true);
+		}
+
+	}
 	bullets_.remove_if([](TransCubeBullet* bullet) {
 		if (bullet->IsDead()) {
 			delete bullet;
@@ -30,6 +45,8 @@ void TransCubeRandBulletState::Update(TransCube* state)
 		}
 		return false;
 	});
+
+
 
 	WorldTransform GetCubeWorldTransform = state->GetWorldTransform();
 
@@ -130,19 +147,6 @@ void TransCubeRandBulletState::Fire(TransCube *state)
 		CoolTime = 0;
 	}
 
-	for (TransCubeBullet *bullet:bullets_) {
-	 
-		if (bullet->GetPosition().x>=80||bullet->GetPosition().x<=-80)
-		{
-			bullet->SetIsDead(true);
-
-		}
-		if (bullet->GetPosition().z >= 80 || bullet->GetPosition().z <= -80)
-		{
-			bullet->SetIsDead(true);
-		}
-
-    }
 
 
 }
