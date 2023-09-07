@@ -20,6 +20,12 @@ void Model::Initialize() {
 	Model::CreatePipelineStateObject();
 	//コマンドリストを取得
 	sCommandList_ = DirectXCommon::GetInstance()->GetCommandList().Get();
+	//DxcCompilerの初期化
+	Model::InitializeDxcCompiler();
+	//パイプラインステートの作成
+	Model::CreatePipelineStateObject();
+	//コマンドリストを取得
+	sCommandList_ = DirectXCommon::GetInstance()->GetCommandList().Get();
 }
 
 void Model::Delete() {
@@ -258,12 +264,7 @@ void Model::Create(const std::vector<VertexData>& vertices) {
 }
 
 void Model::CreateSphere() {
-	//DxcCompilerの初期化
-	Model::InitializeDxcCompiler();
-	//パイプラインステートの作成
-	Model::CreatePipelineStateObject();
-	//コマンドリストを取得
-	sCommandList_ = DirectXCommon::GetInstance()->GetCommandList().Get();
+
 	//DirectionalLightの作成
 	directionalLight_ = std::make_unique<DirectionalLight>();
 	directionalLight_->Initialize();
@@ -407,6 +408,8 @@ Model::ModelData Model::LoadObjFile(const std::string& directoryPath, const std:
 			modelData.material = LoadMaterialTemplateFile(directoryPath, materialFilename);
 		}
 	}
+	file.close();
+
 	return modelData;
 }
 
@@ -429,6 +432,7 @@ Model::MaterialData Model::LoadMaterialTemplateFile(const std::string& directory
 			materialData.textureFilePath = directoryPath + "/" + textureFilename;
 		}
 	}
+	file.close();
 	return materialData;
 }
 

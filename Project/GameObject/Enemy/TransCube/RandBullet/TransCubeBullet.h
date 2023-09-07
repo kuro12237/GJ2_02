@@ -6,6 +6,7 @@
 using std::unique_ptr;
 
 
+
 class TransCubeBullet
 {
 public:
@@ -13,19 +14,29 @@ public:
 	~TransCubeBullet();
 
 
-	void Initialize(Vector3 &velocity);
+	void Initialize(Vector3 &velocity,Vector3 pos);
 
 	void Update();
 
-	bool IsDead() { return true; }
+	bool IsDead() const{ return isDead; }
+	void SetIsDead(bool flag) {  isDead=flag; }
+	Vector3 GetPosition() { return GetWorldPosition(); }
 
 	void Draw(ViewProjection view);
-private:
 
-	unique_ptr<Model> model_ = nullptr;
+	
+private:
+	Vector3 GetWorldPosition();
+
+
+	Model* model_ = nullptr;
 	WorldTransform worldTransform_ = {};
 
 	Vector3 velocity_ = {};
+
+	bool isDead = false;
+	int32_t deathTimer_ = 10;
+
 
 };
 

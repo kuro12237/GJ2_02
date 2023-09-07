@@ -3,7 +3,11 @@
 
 GameScene::GameScene() {};
 
-GameScene::~GameScene() {};
+GameScene::~GameScene() 
+{
+	
+
+};
 
 void GameScene::Initialize(GameManager* gameManager) {
 	//TextureManagerのインスタンスを取得

@@ -118,6 +118,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeBullet.cpp" />
     <ClCompile Include="Project\GameObject\Enemy\TransCube\state\ITransCubeState.cpp" />
+    <ClCompile Include="Project\GameObject\Enemy\TransCube\state\TransCubeGroundAttak\TranscubeGroundAttak.cpp" />
     <ClCompile Include="Project\GameObject\Enemy\TransCube\state\TransCubeRandBullet\TransCubeRandBulletState.cpp" />
     <ClCompile Include="Project\GameObject\Enemy\TransCube\TransCube.cpp" />
     <ClCompile Include="Project\GameObject\Ground\TestGround.cpp" />
@@ -156,6 +157,7 @@ copy "$(WindowsSdkDir)bin\$(TargetPlatformVersion)\x64\dxil.dll" "$(TargetDir)dx
     <ClInclude Include="Engine\Math\MathFunction.h" />
     <ClInclude Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeBullet.h" />
     <ClInclude Include="Project\GameObject\Enemy\TransCube\state\ITransCubeState.h" />
+    <ClInclude Include="Project\GameObject\Enemy\TransCube\state\TransCubeGroundAttak\TransCubeGroundAttak.h" />
     <ClInclude Include="Project\GameObject\Enemy\TransCube\state\TransCubeRandBullet\TransCubeRandBulletState.h" />
     <ClInclude Include="Project\GameObject\Enemy\TransCube\TransCube.h" />
     <ClInclude Include="Project\GameObject\Ground\TestGround.h" />

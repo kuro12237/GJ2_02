@@ -73,7 +73,7 @@ private:
 	std::unique_ptr<FollowCamera> followCamera_ = nullptr;
 	
 	//TransCube
-	std::unique_ptr<TransCube> transCube_ = nullptr;
+	unique_ptr<TransCube> transCube_ = nullptr;
 
 	//testGround
 	std::unique_ptr<TestGround> ground_ = nullptr;

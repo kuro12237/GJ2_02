@@ -39,11 +39,13 @@ GameManager::~GameManager() {
 	currentScene_ = nullptr;
 	PostProcess::DeleteInstance();
 	Input::DeleteInstance();
+	Model::Delete();
 	Audio::DeleteInstance();
 	ImGuiManager::DeleteInstance();
 	TextureManager::DeleteInstance();
 	DirectXCommon::DeleteInstance();
 	WinApp::DeleteInstance();
+
 }
 
 void GameManager::ChangeScene(IScene* newScene) {
@@ -77,7 +79,7 @@ void GameManager::run() {
 		//ゲームシーンの描画
 		currentScene_->Draw(this);
 		//ポストプロセスの描画
-		postProcess_->Draw();
+		//postProcess_->Draw();
 		//ImGuiの描画
 		imguiManager_->Draw();
 		//描画終了

@@ -1,7 +1,7 @@
 #pragma once
 #include"Model/Model.h"
 #include"state/TransCubeRandBullet/TransCubeRandBulletState.h"
-
+#include"Input/Input.h"
 struct TransCubeReticle
 {
 	Vector3 Left = {};
@@ -12,6 +12,7 @@ struct TransCubeReticle
 	WorldTransform RworldTransform = {};
 	WorldTransform FworldTransform = {};
 	WorldTransform BworldTransform = {};
+
 
 };
 
@@ -31,18 +32,24 @@ public:
 
 	Vector3 GetWorldPosition();
 	TransCubeReticle GetReticlePos() { return DirectionReticlePos_; }
+	WorldTransform GetWorldTransform() { return worldTransform; }
+	
+	void SetWorldTransform(WorldTransform w) { worldTransform = w; }
+
 
 private:
 
 	void ReticlePosFanc();
 
-	std::unique_ptr<Model> model_;
+	Model*model_;
 	WorldTransform worldTransform = {};
 
 
 	std::unique_ptr<ITransCubeState>state_ = nullptr;
 
 	TransCubeReticle DirectionReticlePos_ = {};
-	Model* Fmodel_ = nullptr;
+
 	const float DirectionReticleSpace = 5.0f;
+
+	Input* input = nullptr;
 };

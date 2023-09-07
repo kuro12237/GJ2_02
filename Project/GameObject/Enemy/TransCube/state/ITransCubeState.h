@@ -6,6 +6,7 @@ class TransCube;
 class ITransCubeState
 {
 public:
+	//virtual ~ITransCubeState() {};
 
 	virtual void Initialize(TransCube* state) = 0;
 
@@ -14,6 +15,7 @@ public:
 	virtual void Draw(TransCube* state,ViewProjection view) = 0;
 
 	virtual void SetParent(const WorldTransform* parent) = 0;
+	virtual void Deleate() = 0;
 private:
 
 };
