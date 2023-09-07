@@ -17,6 +17,8 @@ public:
 
 	void Update();
 
+	bool IsDead() { return true; }
+
 	void Draw(ViewProjection view);
 private:
 

@@ -5,6 +5,8 @@
 #include"../GameObject/Enemy/TransCube/RandBullet/TransCubeBullet.h"
 #include"../GameObject/Enemy/TransCube/TransCube.h"
 
+
+
 class TransCubeRandBulletState :public ITransCubeState
 {
 public:

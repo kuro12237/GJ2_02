@@ -17,13 +17,13 @@ void TransCube::Initialize()
 
 	state_ = std::make_unique<TransCubeRandBulletState>();
 	state_->Initialize(this);
+	
 
 }
 
 void TransCube::Update()
 {
 	ReticlePosFanc();
-
 	worldTransform.rotation_.y += 0.01f;
 	worldTransform.UpdateMatrix();
 	state_->Update(this);
@@ -32,8 +32,8 @@ void TransCube::Update()
 void TransCube::Draw(ViewProjection view)
 {
 	state_->Draw(this, view);
-	//model_.get()->Draw(worldTransform, view);
-
+	model_.get()->Draw(worldTransform, view);
+	//model_.get()->Draw(DirectionReticlePos_.FworldTransform, view);
 }
 
 void TransCube::ChangeLaserState()
@@ -55,15 +55,23 @@ Vector3 TransCube::GetWorldPosition()
 
 void TransCube::ReticlePosFanc()
 {
-	DirectionReticlePos_.Front = { GetWorldPosition() };
-	DirectionReticlePos_.Back = { GetWorldPosition() };
-	DirectionReticlePos_.Left = { GetWorldPosition() };
-	DirectionReticlePos_.Right = { GetWorldPosition() };
 
-	DirectionReticlePos_.Front.z = DirectionReticlePos_.Front.z + DirectionReticleSpace;
-	DirectionReticlePos_.Back.z = DirectionReticlePos_.Back.z - DirectionReticleSpace;
-	DirectionReticlePos_.Right.x = DirectionReticlePos_.Right.x + DirectionReticleSpace;
-	DirectionReticlePos_.Left.x = DirectionReticlePos_.Left.x - DirectionReticleSpace;
+	const float kDistancePlayerTo3DReticle = 50.0f;
+	Vector3 offset = { 0, 0, 1.0f };
+
+	Vector3 pos = {};
+	pos = GetWorldPosition();
+	offset = TransformNormal(offset, worldTransform.matWorld_);
+	offset = Normalize(offset);
+
+	offset.x *= kDistancePlayerTo3DReticle;
+	offset.y *= kDistancePlayerTo3DReticle;
+	offset.z *= kDistancePlayerTo3DReticle;
+	DirectionReticlePos_.FworldTransform.translation_.x = offset.x + pos.x;
+	DirectionReticlePos_.FworldTransform.translation_.y = offset.y + pos.y;
+	DirectionReticlePos_.FworldTransform.translation_.z = offset.z + pos.z;
+
+	DirectionReticlePos_.FworldTransform.UpdateMatrix();
 
 
 

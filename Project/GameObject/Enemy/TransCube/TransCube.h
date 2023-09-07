@@ -8,6 +8,11 @@ struct TransCubeReticle
 	Vector3 Right = {};
 	Vector3 Front = {};
 	Vector3 Back = {};
+	WorldTransform LworldTransform = {};
+	WorldTransform RworldTransform = {};
+	WorldTransform FworldTransform = {};
+	WorldTransform BworldTransform = {};
+
 };
 
 class TransCube
@@ -38,5 +43,6 @@ private:
 	std::unique_ptr<ITransCubeState>state_ = nullptr;
 
 	TransCubeReticle DirectionReticlePos_ = {};
+	Model* Fmodel_ = nullptr;
 	const float DirectionReticleSpace = 5.0f;
 };

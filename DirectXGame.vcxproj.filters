@@ -117,9 +117,6 @@
     <ClCompile Include="Engine\3D\Model\Vertex.cpp">
       <Filter>ソース ファイル\Engine\3D</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\3D\Model\Model.cpp">
-      <Filter>ソース ファイル\Engine\3D</Filter>
-    </ClCompile>
     <ClCompile Include="Engine\3D\DebugCamera\DebugCamera.cpp">
       <Filter>ソース ファイル\Engine\3D</Filter>
     </ClCompile>
@@ -186,6 +183,9 @@
     <ClCompile Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeBullet.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\3D\Model\Model.cpp">
+      <Filter>ソース ファイル\Engine\3D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Base\DirectXCommon\DirectXCommon.h">
@@ -210,9 +210,6 @@
       <Filter>ヘッダー ファイル\Engine\3D</Filter>
     </ClInclude>
     <ClInclude Include="Engine\3D\Model\Vertex.h">
-      <Filter>ヘッダー ファイル\Engine\3D</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine\3D\Model\Model.h">
       <Filter>ヘッダー ファイル\Engine\3D</Filter>
     </ClInclude>
     <ClInclude Include="Engine\3D\TransformationMatrix\WorldTransform.h">
@@ -298,6 +295,9 @@
     </ClInclude>
     <ClInclude Include="Project\GameObject\Enemy\TransCube\RandBullet\TransCubeBullet.h">
       <Filter>ソース ファイル\Project\GameObject\TransCube</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\3D\Model\Model.h">
+      <Filter>ソース ファイル\Engine\3D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

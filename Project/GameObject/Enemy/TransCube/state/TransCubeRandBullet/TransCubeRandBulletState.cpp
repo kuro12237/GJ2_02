@@ -16,7 +16,9 @@ void TransCubeRandBulletState::Initialize(TransCube* state)
 
 void TransCubeRandBulletState::Update(TransCube* state)
 {
-	Vector3 FlontVelocity = Lerp(state->GetReticlePos().Front, state->GetWorldPosition(), 0);
+	
+
+	Vector3 FlontVelocity = Lerp( state->GetWorldPosition(),state->GetReticlePos().FworldTransform.translation_,1);
 
 	FlontVelocity = Normalize(FlontVelocity);
 	CoolTime++;
