@@ -59,7 +59,7 @@ void TransCube::Draw(ViewProjection view)
 
 }
 
-void TransCube::ChangeLaserState()
+void TransCube::ChangeRandBulletState()
 {
 
 	state_.release();

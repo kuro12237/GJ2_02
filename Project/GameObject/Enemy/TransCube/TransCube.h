@@ -2,6 +2,7 @@
 #include"Model/Model.h"
 #include"state/TransCubeRandBullet/TransCubeRandBulletState.h"
 #include"Input/Input.h"
+#include"Player/Player.h"
 struct TransCubeReticle
 {
 	Vector3 Left = {};
@@ -12,9 +13,10 @@ struct TransCubeReticle
 	WorldTransform RworldTransform = {};
 	WorldTransform FworldTransform = {};
 	WorldTransform BworldTransform = {};
-
-
 };
+
+
+class Player;
 
 class TransCube
 {
@@ -28,15 +30,17 @@ public:
 
 	void Draw(ViewProjection view);
 
-	void ChangeLaserState();
+	void ChangeRandBulletState();
 
 	Vector3 GetWorldPosition();
 	TransCubeReticle GetReticlePos() { return DirectionReticlePos_; }
 	WorldTransform GetWorldTransform() { return worldTransform; }
-	
+	Player* GetPlayer() { return player_; }
+
 	void SetWorldTransform(WorldTransform w) { worldTransform = w; }
+	void SetPlayer(Player* player) { player_ = player; }
 
-
+	
 private:
 
 	void ReticlePosFanc();
@@ -52,4 +56,5 @@ private:
 	const float DirectionReticleSpace = 5.0f;
 
 	Input* input = nullptr;
+	Player *player_ = nullptr;
 };

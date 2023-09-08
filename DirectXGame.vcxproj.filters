@@ -82,6 +82,9 @@
     <Filter Include="ソース ファイル\Project\GameObject\TransCube\state_\TransCubeGroundAttak">
       <UniqueIdentifier>{59a6e86e-c871-435e-8f52-5170b1c40e53}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Project\GameObject\TransCube\state_\TransCubeGroundBullet">
+      <UniqueIdentifier>{fe2ca6ad-a706-4cdc-8f94-0abd90323385}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -191,6 +194,9 @@
     </ClCompile>
     <ClCompile Include="Project\GameObject\Enemy\TransCube\state\TransCubeGroundAttak\TranscubeGroundAttak.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Project\GameObject\Enemy\TransCube\GroundAttack\TransCubeGroundAttack.cpp">
+      <Filter>ソース ファイル\Project\GameObject\TransCube\state_\TransCubeGroundBullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -307,6 +313,9 @@
     </ClInclude>
     <ClInclude Include="Project\GameObject\Enemy\TransCube\state\TransCubeGroundAttak\TransCubeGroundAttak.h">
       <Filter>ソース ファイル\Project\GameObject\TransCube\state_\TransCubeGroundAttak</Filter>
+    </ClInclude>
+    <ClInclude Include="Project\GameObject\Enemy\TransCube\GroundAttack\TransCubeGroundAttack.h">
+      <Filter>ソース ファイル\Project\GameObject\TransCube\state_\TransCubeGroundBullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

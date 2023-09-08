@@ -16,15 +16,11 @@ void TransCubeBullet::Initialize(Vector3 &velocity,Vector3 pos)
 	model_->CreateSphere();
 
 	//model_->CreateFromOBJ("Project/Resources/EnemyObj/TransCube", "TransCube.obj");
-
 	worldTransform_.matWorld_ = MakeIdentity4x4();
 	worldTransform_.scale_ = { 1,1,1 };
 	worldTransform_.translation_ = pos;
 	worldTransform_.translation_.y = worldTransform_.translation_.y+3.0f;
 	velocity_ = velocity;
-
-
-
 }
 
 void TransCubeBullet::Update()
